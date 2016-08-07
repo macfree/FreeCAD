@@ -569,7 +569,7 @@ endif(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
         find_package(VTK REQUIRED) #don't check VERSION 6 as this would exclude version 7
         set(BUILD_FEM_VTK ON)
         if(${VTK_MAJOR_VERSION} LESS 6)
-            message( FATAL_ERROR "Found VTK version is <6, this is not compatible" )
+            message( FATAL_ERROR "Found VTK version is "+${VTK_MAJOR_VERSION}+" (req<6), this is not compatible" )
         endif()
         if(${VTK_MAJOR_VERSION} EQUAL 6)
             if(${VTK_MINOR_VERSION} LESS 2)
